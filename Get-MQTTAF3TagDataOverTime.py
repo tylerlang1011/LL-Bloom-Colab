@@ -17,10 +17,8 @@ orgId = 'fcfc00a1-5d18-4ed6-98b9-95d77293df29' #Bloom Energy
 siteId = '9ad854fe-c449-403c-ba1c-cd1173a13656' #Proof of Concept
 username = 'tyler.lang@link-labs.com'
 password = keyring.get_password("conductor", "tyler.lang@link-labs.com")
-timeBefore = '2024-04-22T15:13:00.000'
-timeAfter  = '2024-04-22T11:00:00.000'
-mac = 'E4:F8:3C:B6:E8:56'
-
+timeBefore = '2024-05-01T11:13:00.000'
+timeAfter  = '2024-05-01T11:00:00.000'
 ###############################################################################
 # argparse
 ###############################################################################
@@ -38,7 +36,8 @@ args = parser.parse_args()
 ###############################################################################
 
 
-def main():
+def main(macAddr):
+    mac = macAddr
     AUTH = (args.username, args.password)
     pageNumber = 1
     url = ceProdBaseUrl + '/mqtt/{}/{}/{}?page={}'.format(args.siteId, args.timeBefore, args.timeAfter, pageNumber)
@@ -98,4 +97,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    tag_list = ['E4:F8:3C:B6:E8:56']
+    for tag in tag_list:
+        main(tag)

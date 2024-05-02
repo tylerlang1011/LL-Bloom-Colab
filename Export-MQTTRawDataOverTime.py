@@ -17,8 +17,9 @@ orgId = 'fcfc00a1-5d18-4ed6-98b9-95d77293df29' #Bloom Energy
 siteId = '9ad854fe-c449-403c-ba1c-cd1173a13656' #Proof of Concept
 username = 'tyler.lang@link-labs.com'
 password = keyring.get_password("conductor", "tyler.lang@link-labs.com")
-timeBefore = '2024-04-22T15:13:00.000'
-timeAfter  = '2024-04-22T11:00:00.000'
+# time needs to be in UTC
+timeBefore = '2024-05-01T12:13:00.000'
+timeAfter  = '2024-05-01T11:00:00.000'
 
 ###############################################################################
 # argparse
